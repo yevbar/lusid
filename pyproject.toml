@@ -1,0 +1,18 @@
+[project]
+name = "lusid"
+version = "0.0.1"
+authors = [
+  { name="Yev Barkalov", email="yev@lsd.so" },
+]
+description = "Manage iMessage with python"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+]
+
+[project.urls]
+Homepage = "https://github.com/yevbar/lusid"
+Issues = "https://github.com/yevbar/lusid/issues"
