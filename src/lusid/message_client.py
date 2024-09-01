@@ -48,7 +48,7 @@ class MessageClient:
         messages = self._messages(no_filter=True)
         return (number in m[0] and m[1] == "STOP" for m in messages)
 
-    def send_message(to, content):
+    def send_message(self, to, content):
         if self._number_requested_stop(to):
             # If you want to ship this to the iOS app store then you'll need to stop when the user requests so
             return
