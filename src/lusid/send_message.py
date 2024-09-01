@@ -1,6 +1,6 @@
 from .message_client import MessageClient
 
 
-def send_message(to, body):
+def send_message(to, body, ignore_stop=False):
     mc = MessageClient()
-    mc.send_message(to, body) # Sending from client since it checks for STOP message
+    mc.send_message(to, body, ignore_stop)
