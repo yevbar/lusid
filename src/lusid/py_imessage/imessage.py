@@ -1,4 +1,4 @@
-from py_imessage import db_conn
+from . import db_conn
 import os
 import subprocess
 import platform
