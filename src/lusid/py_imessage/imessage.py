@@ -9,7 +9,7 @@ import sys
 if sys.version_info[0] < 3:
     print("Must be using Python 3")
 
-print(platform.mac_ver())
+# print(platform.mac_ver())
 
 def _check_mac_ver():
     mac_ver, _, _ = platform.mac_ver()
