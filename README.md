@@ -135,7 +135,6 @@ def handle_message(from_number, body):
 
 def start_client():
   create_simple_message_client(
-    message_handler=lambda to, body: None,
     message_handler=handle_message
   )
 
