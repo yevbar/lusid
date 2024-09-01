@@ -20,6 +20,11 @@ class MessageClient:
         if "handle_message" in kwargs:
             self.handle_message = kwargs["handle_message"]
 
+        self.read_messages_cache = dict()
+
+    def _hash_message_for_cache(self, message):
+        return hash(f"{m[0]} :: {m[1]} :: {m[2]}")
+
     def _parse_time(self, dt):
         return datetime.strptime(dt, "%Y-%m-%d %H:%M:%S")
 
@@ -50,10 +55,20 @@ class MessageClient:
     def handle_message(self, from_number, body):
         raise NotImplemented
 
-    # TODO yev - some sort of post_read_and_handle for OTP?
+    def post_read_and_handle(self):
+        # Optional, can be overwritten by kwargs["post_read_handler"]
+        pass
 
     def read_and_handle(self):
-        # Get messages based on class time_filter
-        # Check to make sure message has or has not yet been handled
-        # Use self.handle_message to handle messages (get a string to reply with or None if dont reply at all)
-        pass
+        messages = self._get_inbound_messages()
+        for m in messages:
+            h = self._hash_message_for_cache(m)
+            if h not in self.read_messages_cache:
+                self.read_messages_cache[h] = True
+                from_number = m[0]
+                body = m[1]
+                possible_reply = self.handle_message(from_number, body)
+                if possible_reply is not None:
+                    self.send_message(from_number, possible_reply)
+
+        self.post_read_and_handle()

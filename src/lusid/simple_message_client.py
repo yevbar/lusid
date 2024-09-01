@@ -17,3 +17,6 @@ def create_simple_message_client(message_handler, interval=1):
 
         try:
             mc.read_and_handle()
+        except Exception as e: # Very failure tolerant
+            print("Exception!")
+            print(e)
