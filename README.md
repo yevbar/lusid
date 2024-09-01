@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
 ```bash
 $ python app.py
-Some terminal output indicating it's running...
+Handling the message [Hello word!] from [+11234567890]
 ```
 
 ## Complex example
