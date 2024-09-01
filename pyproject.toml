@@ -1,6 +1,6 @@
 [project]
 name = "lusid"
-version = "0.0.37"
+version = "0.0.38"
 authors = [
   { name="Yev Barkalov", email="yev@lsd.so" },
 ]

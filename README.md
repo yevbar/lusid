@@ -15,6 +15,14 @@ Use pip or whichever python package manager you're working with
 $ pip install lusid
 ```
 
+You'll need to allow your Terminal application (or whichever terminal emulator you're running) to have full disk access in order to view the `chat.db` file containing your iMessages
+
+```bash
+$ csrutil disable
+```
+
+If running `csrutil disable` doesn't work, try this [stackoverflow post](https://apple.stackexchange.com/questions/208478/how-do-i-disable-system-integrity-protection-sip-aka-rootless-on-macos-os-x)
+
 ## Quickstart (sending messages)
 
 If you're just interested in sending a message, import the `send_message` function and voila
