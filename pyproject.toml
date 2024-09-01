@@ -1,10 +1,10 @@
 [project]
 name = "lusid"
-version = "0.0.39"
+version = "0.0.40"
 authors = [
   { name="Yev Barkalov", email="yev@lsd.so" },
 ]
-description = "Manage iMessage with python"
+description = "Automate iMessage with Python"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
