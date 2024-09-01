@@ -241,3 +241,7 @@ Telling kevin that Cats are the most popular pet in the United States: There are
 Telling kevin that Most cats are lactose intolerant, and milk can cause painful stomach cramps and diarrhea. It's best to forego the milk and just give your cat the standard: clean, cool drinking water.
 Telling kevin that Owning a cat can reduce the risk of stroke and heart attack by a third.
 ```
+
+## Shameless plug
+
+Think this is cool? Check out what we're actually building @ [https://lsd.so](https://lsd.so)
