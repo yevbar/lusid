@@ -222,3 +222,12 @@ def start_client():
 if __name__ == "__main__":
   start_client()
 ```
+
+And here's what it looks like when run
+
+```bash
+$ python app.py
+Telling kevin that Cats are the most popular pet in the United States: There are 88 million pet cats and 74 million dogs.
+Telling kevin that Most cats are lactose intolerant, and milk can cause painful stomach cramps and diarrhea. It's best to forego the milk and just give your cat the standard: clean, cool drinking water.
+Telling kevin that Owning a cat can reduce the risk of stroke and heart attack by a third.
+```
