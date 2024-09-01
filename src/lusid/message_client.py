@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from imessage_reader import fetch_data
-from py_imessage import imessage
+from .imessage_reader import fetch_data
+from .py_imessage import imessage
 
 from .mac_db import get_db_path
 
