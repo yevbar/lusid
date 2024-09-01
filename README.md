@@ -181,3 +181,32 @@ def start_client():
 if __name__ == "__main__":
   start_client()
 ```
+
+Or, if you'd like to just copy and paste
+
+```python
+# app.py
+
+from requests import get
+from lusid import create_simple_message_client
+
+def handle_message(from_number, body):
+  print(f"Handling the message [{body}] from [{from_number}]")
+  return "Some funny autoreply here" # Or None to not reply at all
+
+def handle_post_read(cls):
+  facts = get("https://cat-fact.herokuapp.com/facts").json()
+  fact = facts[0]["text"]
+ 
+  kevin = "123-456-7890"
+  cls.send_message(kevin, fact)
+
+def start_client():
+  create_simple_message_client(
+    message_handler=handle_message,
+    handle_post_read=handle_post_read
+  )
+
+if __name__ == "__main__":
+  start_client()
+```
