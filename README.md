@@ -76,7 +76,7 @@ if __name__ == "__main__":
 ```python
 # Snippet
 
-def handle_message(from, body):
+def handle_message(from_number, body):
   print(f"Handling the message [{body}] from [{from}]")
   return "Some funny autoreply here" # Or None to not reply at all
 ```
@@ -88,7 +88,7 @@ def handle_message(from, body):
 
 from lusid import create_simple_message_client
 
-+def handle_message(from, body):
++def handle_message(from_number, body):
 +  print(f"Handling the message [{body}] from [{from}]")
 +  return "Some funny autoreply here" # Or None to not reply at all
 
@@ -108,7 +108,7 @@ Then actually use it as our message handler
 
 from lusid import create_simple_message_client
 
-def handle_message(from, body):
+def handle_message(from_number, body):
   print(f"Handling the message [{body}] from [{from}]")
   return "Some funny autoreply here" # Or None to not reply at all
 
@@ -129,7 +129,7 @@ If you'd like to just copy/paste the resulting code
 
 from lusid import create_simple_message_client
 
-def handle_message(from, body):
+def handle_message(from_number, body):
   print(f"Handling the message [{body}] from [{from}]")
   return "Some funny autoreply here" # Or None to not reply at all
 
