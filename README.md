@@ -21,10 +21,10 @@ $ # Or pipenv install lusid...
 ```python
 # app.py
 
-from lusid import create_simple_message_reader
+from lusid import create_simple_message_client
 
 def start_client():
-  create_simple_message_reader(
+  create_simple_message_client(
     message_handler=lambda to, body: None
   )
 
@@ -37,26 +37,24 @@ if __name__ == "__main__":
 ```python
 # Snippet
 
-def handle_message(from, body, send_message):
+def handle_message(from, body):
   print(f"Handling the message [{body}] from [{from}]")
-  send_message(from, "Some funny autoreply here")
+  return "Some funny autoreply here" # Or None to not reply at all
 ```
-
-Similar to a "response" variable in web handlers, the `send_message` parameter provides a method to send a message
 
 3. Next we're going to include the function we defined earlier
 
 ```diff
 # app.py
 
-from lusid import create_simple_message_reader
+from lusid import create_simple_message_client
 
-+def handle_message(from, body, send_message):
++def handle_message(from, body):
 +  print(f"Handling the message [{body}] from [{from}]")
-+  send_message(from, "Some funny autoreply here")
++  return "Some funny autoreply here" # Or None to not reply at all
 
 def start_client():
-  create_simple_message_reader(
+  create_simple_message_client(
     message_handler=lambda to, body: None
   )
 
@@ -69,14 +67,14 @@ Then actually use it as our message handler
 ```diff
 # app.py
 
-from lusid import create_simple_message_reader
+from lusid import create_simple_message_client
 
-def handle_message(from, body, send_message):
+def handle_message(from, body):
   print(f"Handling the message [{body}] from [{from}]")
-  send_message(from, "Some funny autoreply here")
+  return "Some funny autoreply here" # Or None to not reply at all
 
 def start_client():
-  create_simple_message_reader(
+  create_simple_message_client(
 -    message_handler=lambda to, body: None
 +    message_handler=handle_message
   )
