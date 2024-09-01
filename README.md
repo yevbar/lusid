@@ -164,6 +164,7 @@ In short, like how React components have lifecycle methods, the message client f
 ```diff
 # app.py
 
++import random
 from requests import get
 from lusid import create_simple_message_client
 
@@ -173,7 +174,7 @@ def handle_message(from_number, body):
 
 +def handle_post_read(cls):
 +  facts = get("https://cat-fact.herokuapp.com/facts").json()
-+  fact = facts[0]["text"]
++  fact = random.choice(facts)["text"]
 +
 +  print(f"Telling kevin that {fact}")
 +
@@ -195,6 +196,7 @@ Or, if you'd like to just copy and paste
 ```python
 # app.py
 
+import random
 from requests import get
 from lusid import create_simple_message_client
 
@@ -204,7 +206,7 @@ def handle_message(from_number, body):
 
 def handle_post_read(cls):
   facts = get("https://cat-fact.herokuapp.com/facts").json()
-  fact = facts[0]["text"]
+  fact = random.choice(facts)["text"]
 
   print(f"Telling kevin that {fact}")
 
