@@ -175,7 +175,7 @@ def handle_message(from_number, body):
 def start_client():
   create_simple_message_client(
     message_handler=handle_message,
-+	handle_post_read=handle_post_read
++    handle_post_read=handle_post_read
   )
 
 if __name__ == "__main__":
