@@ -40,7 +40,7 @@ class MessageClient:
         if no_filter:
             return my_data
 
-        return [m for m in my_data if self._parse_time(m[2]) > self._parse_time(self.time_filter)]
+        return [m for m in my_data if self._parse_time(m[2]) > self.time_filter]
 
     def _get_inbound_messages(self, no_filter=False):
         messages = self._get_messages(no_filter)
