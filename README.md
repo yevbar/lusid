@@ -122,6 +122,27 @@ if __name__ == "__main__":
   start_client()
 ```
 
+If you'd like to just copy/paste the resulting code
+
+```python
+# app.py
+
+from lusid import create_simple_message_client
+
+def handle_message(from, body):
+  print(f"Handling the message [{body}] from [{from}]")
+  return "Some funny autoreply here" # Or None to not reply at all
+
+def start_client():
+  create_simple_message_client(
+    message_handler=lambda to, body: None
+    message_handler=handle_message
+  )
+
+if __name__ == "__main__":
+  start_client()
+```
+
 4. Now your script is set up to automatically reply to every received message with "Some funny autoreply here"
 
 ```bash
