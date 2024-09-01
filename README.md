@@ -64,7 +64,7 @@ from lusid import create_simple_message_client
 
 def start_client():
   create_simple_message_client(
-    message_handler=lambda to, body: None
+    message_handler=lambda to, body: None,
   )
 
 if __name__ == "__main__":
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 # Snippet
 
 def handle_message(from_number, body):
-  print(f"Handling the message [{body}] from [{from}]")
+  print(f"Handling the message [{body}] from [{from_number}]")
   return "Some funny autoreply here" # Or None to not reply at all
 ```
 
@@ -89,12 +89,12 @@ def handle_message(from_number, body):
 from lusid import create_simple_message_client
 
 +def handle_message(from_number, body):
-+  print(f"Handling the message [{body}] from [{from}]")
++  print(f"Handling the message [{body}] from [{from_number}]")
 +  return "Some funny autoreply here" # Or None to not reply at all
 
 def start_client():
   create_simple_message_client(
-    message_handler=lambda to, body: None
+    message_handler=lambda to, body: None,
   )
 
 if __name__ == "__main__":
@@ -109,12 +109,12 @@ Then actually use it as our message handler
 from lusid import create_simple_message_client
 
 def handle_message(from_number, body):
-  print(f"Handling the message [{body}] from [{from}]")
+  print(f"Handling the message [{body}] from [{from_number}]")
   return "Some funny autoreply here" # Or None to not reply at all
 
 def start_client():
   create_simple_message_client(
--    message_handler=lambda to, body: None
+-    message_handler=lambda to, body: None,
 +    message_handler=handle_message
   )
 
@@ -130,12 +130,12 @@ If you'd like to just copy/paste the resulting code
 from lusid import create_simple_message_client
 
 def handle_message(from_number, body):
-  print(f"Handling the message [{body}] from [{from}]")
+  print(f"Handling the message [{body}] from [{from_number}]")
   return "Some funny autoreply here" # Or None to not reply at all
 
 def start_client():
   create_simple_message_client(
-    message_handler=lambda to, body: None
+    message_handler=lambda to, body: None,
     message_handler=handle_message
   )
 
