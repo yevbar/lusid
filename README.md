@@ -153,7 +153,13 @@ Handling the message [Hello word!] from [+11234567890]
 
 Suppose you wanted to be able to share cat facts with a specific friend while also having message interaction, here's how you can accomplish that. We'll be adding to the **Basic example** above
 
-In short, like how React components have lifecycle methods, the message client features a `handle_post_read` method that can be specified at instantiation
+For this particular example we'll be using the python package `requests` to make a simple API request
+
+```bash
+$ pip install requests
+```
+
+In short, like how React components have lifecycle methods, the message client features a `handle_post_read` method that can be specified at instantiation. 
 
 ```diff
 # app.py
