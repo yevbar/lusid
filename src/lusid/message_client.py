@@ -28,7 +28,7 @@ class MessageClient:
         self.read_messages_cache = dict()
 
     def _hash_message_for_cache(self, message):
-        return hash(f"{m[0]} :: {m[1]} :: {m[2]}")
+        return hash(f"{message[0]} :: {message[1]} :: {message[2]}")
 
     def _parse_time(self, dt):
         return datetime.strptime(dt, "%Y-%m-%d %H:%M:%S")
