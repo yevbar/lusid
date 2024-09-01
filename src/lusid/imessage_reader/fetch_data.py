@@ -14,7 +14,7 @@ import logging
 
 from os.path import expanduser
 
-from imessage_reader import common, create_sqlite, write_excel, data_container
+from . import common, create_sqlite, write_excel, data_container
 
 
 # logging.basicConfig(level=logging.DEBUG)
