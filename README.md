@@ -151,4 +151,33 @@ Handling the message [Hello word!] from [+11234567890]
 
 ## Complex example
 
-Suppose you wanted to be able to inform a friend as to whether or not it's Thursday while also having message interaction, here's how you can accomplish that
+Suppose you wanted to be able to share cat facts with a specific friend while also having message interaction, here's how you can accomplish that. We'll be adding to the **Basic example** above
+
+In short, like how React components have lifecycle methods, the message client features a `handle_post_read` method that can be specified at instantiation
+
+```diff
+# app.py
+
+from requests import get
+from lusid import create_simple_message_client
+
+def handle_message(from_number, body):
+  print(f"Handling the message [{body}] from [{from_number}]")
+  return "Some funny autoreply here" # Or None to not reply at all
+
++def handle_post_read(cls):
++  facts = get("https://cat-fact.herokuapp.com/facts").json()
++  fact = facts[0]["text"]
++ 
++  kevin = "123-456-7890"
++  cls.send_message(kevin, fact)
+
+def start_client():
+  create_simple_message_client(
+    message_handler=handle_message,
++	handle_post_read=handle_post_read
+  )
+
+if __name__ == "__main__":
+  start_client()
+```

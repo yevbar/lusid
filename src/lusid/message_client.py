@@ -22,7 +22,7 @@ class MessageClient:
         if "handle_message" in kwargs:
             self.handle_message = kwargs["handle_message"]
 
-        if "handle_post_read" in kwargs:
+        if "handle_post_read" in kwargs and kwargs["handle_post_read"] is not None:
             self.post_read_and_handle = kwargs["handle_post_read"]
 
         self.read_messages_cache = dict()
