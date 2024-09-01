@@ -1,10 +1,6 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "lusid"
-version = "0.0.16"
+version = "0.0.17"
 authors = [
   { name="Yev Barkalov", email="yev@lsd.so" },
 ]
@@ -24,6 +20,3 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/yevbar/lusid"
 Issues = "https://github.com/yevbar/lusid/issues"
-
-[tool.setuptools]
-package-data = {"lusid" = ["*.js"]}
