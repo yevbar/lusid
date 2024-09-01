@@ -12,6 +12,8 @@ class MessageClient:
     def __init__(self, *args, **kwargs):
         # A time filter to ensure messages being read come after a certain date
         self.time_filter = kwargs.get("time_filter", self.IMESSAGE_CREATION)
+        if type(self.time_filter) is str:
+            self.time_filter = self._parse_time(self.time_filter)
 
         # The location of the chat.db file used by iMessage
         self.db_path = kwargs.get("db_path", get_db_path())
