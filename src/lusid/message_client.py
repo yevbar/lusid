@@ -60,7 +60,7 @@ class MessageClient:
     def handle_message(self, from_number, body):
         raise NotImplemented
 
-    def post_read_and_handle(self):
+    def post_read_and_handle(self, *args, **kwargs):
         # Optional, can be overwritten by kwargs["handle_post_read"]
         pass
 
@@ -76,4 +76,4 @@ class MessageClient:
                 if possible_reply is not None:
                     self.send_message(from_number, possible_reply)
 
-        self.post_read_and_handle()
+        self.post_read_and_handle(self)
