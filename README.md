@@ -9,11 +9,32 @@ You can programatically control iMessage, here's how
 
 ## Quickstart
 
+Start here if you're just interested in sending a message
+
 1. Install the dependency
 
 ```bash
 $ pip install lusid
-$ # Or pipenv install lusid...
+```
+
+2. Import the `send_message` function and voila
+
+```python
+from lusid import send_message
+
+to = "123-456-7890"
+body = "Yeehaw"
+send_message(to, body)
+```
+
+## Basic example
+
+Start here if you're interested in something interacting with received messages
+
+1. Install the dependency
+
+```bash
+$ pip install lusid
 ```
 
 2. Create a "client" to repeatedly read your inbox (the rest of this quickstart assumes you're writing to a file named `app.py` but feel free to replace that later on with whatever you named your to)
@@ -90,11 +111,6 @@ $ python app.py
 Some terminal output indicating it's running...
 ```
 
-## Additional methods
+## Complex example
 
-## Architecture
-
-If you're wondering how this works under the hood there are two components:
-
-1. Reading messages
-2. Sending messages
+Suppose you wanted to be able to inform a friend as to whether or not it's Thursday while also having message interaction, here's how you can accomplish that
