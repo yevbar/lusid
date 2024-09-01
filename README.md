@@ -223,7 +223,7 @@ if __name__ == "__main__":
   start_client()
 ```
 
-And here's what it looks like when run
+**And here's what it looks like when run**
 
 ```bash
 $ python app.py
