@@ -11,8 +11,8 @@ def get_db_path():
     # Attempt to get /Users/<username>/Library/Messages/chat.db from current working directory
     while len(cwd) > 1:
         if cwd[-2] == "Users":
-            return "/" + "/".join([*cwd[:len(cwd) - 1], "Library", "Messages", "chat.db"])
-        cwd = (*cwd[:len(cwd) - 1])
+            return "/" + "/".join(list(cwd[:len(cwd) - 1]) + ["Library", "Messages", "chat.db"])
+        cwd = list(cwd[:len(cwd) - 1])
 
     # Attempt to get /Users/<username>/Library/Messages/chat.db by looking through /Users/ directory
     for user_directory in next(os.walk('/Users/'))[1]:
