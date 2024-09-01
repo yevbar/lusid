@@ -45,11 +45,11 @@ class MessageClient:
         return [m for m in messages if m[-1] != 1]
 
     def _number_requested_stop(self, number):
-        messages = self._messages(no_filter=True)
+        messages = self._get_inbound_messages(no_filter=True)
         return (number in m[0] and m[1] == "STOP" for m in messages)
 
-    def send_message(self, to, content):
-        if self._number_requested_stop(to):
+    def send_message(self, to, content, ignore_stop=False):
+        if not ignore_stop and self._number_requested_stop(to):
             # If you want to ship this to the iOS app store then you'll need to stop when the user requests so
             return
 
