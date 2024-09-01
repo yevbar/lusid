@@ -7,37 +7,55 @@ If you have the following:
 
 You can programatically control iMessage, here's how
 
-## Quickstart
+## Installing
 
-Start here if you're just interested in sending a message
-
-1. Install the dependency
+Use pip or whichever python package manager you're working with
 
 ```bash
 $ pip install lusid
 ```
 
-2. Import the `send_message` function and voila
+## Quickstart (sending messages)
+
+If you're just interested in sending a message, import the `send_message` function and voila
 
 ```python
 from lusid import send_message
 
 to = "123-456-7890"
 body = "Yeehaw"
+
 send_message(to, body)
+```
+
+## Quickstart (reading messages)
+
+If you're just interested in getting iMessage data
+
+```python
+from lusid import read_messages
+
+print(read_messages())
+```
+
+If you're interested in not only received but all messages and only ones that were sent in the past 24 hours
+
+```python
+from datetime import datetime, timedelta
+
+from lusid import read_messages
+
+print(read_messages(
+  since_time=datetime.now() + timedelta(days=-1),
+  inbound_only=False,
+))
 ```
 
 ## Basic example
 
-Start here if you're interested in something interacting with received messages
+If you're interested in something replying to received messages
 
-1. Install the dependency
-
-```bash
-$ pip install lusid
-```
-
-2. Create a "client" to repeatedly read your inbox (the rest of this quickstart assumes you're writing to a file named `app.py` but feel free to replace that later on with whatever you named your to)
+1. Create a "client" to repeatedly read your inbox (the rest of this quickstart assumes you're writing to a file named `app.py` but feel free to replace that later on with whatever you named your to)
 
 ```python
 # app.py
@@ -53,7 +71,7 @@ if __name__ == "__main__":
   start_client()
 ```
 
-3. Define a function for handling messages:
+2. Define a function for handling messages:
 
 ```python
 # Snippet
