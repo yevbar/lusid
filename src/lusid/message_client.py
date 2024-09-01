@@ -20,6 +20,9 @@ class MessageClient:
         if "handle_message" in kwargs:
             self.handle_message = kwargs["handle_message"]
 
+        if "handle_post_read" in kwargs:
+            self.post_read_and_handle = kwargs["handle_post_read"]
+
         self.read_messages_cache = dict()
 
     def _hash_message_for_cache(self, message):
@@ -56,7 +59,7 @@ class MessageClient:
         raise NotImplemented
 
     def post_read_and_handle(self):
-        # Optional, can be overwritten by kwargs["post_read_handler"]
+        # Optional, can be overwritten by kwargs["handle_post_read"]
         pass
 
     def read_and_handle(self):
