@@ -175,6 +175,8 @@ def handle_message(from_number, body):
 +  facts = get("https://cat-fact.herokuapp.com/facts").json()
 +  fact = facts[0]["text"]
 +
++  print(f"Telling kevin that {fact}")
++
 +  kevin = "123-456-7890"
 +  cls.send_message(kevin, fact)
 
@@ -203,6 +205,8 @@ def handle_message(from_number, body):
 def handle_post_read(cls):
   facts = get("https://cat-fact.herokuapp.com/facts").json()
   fact = facts[0]["text"]
+
+  print(f"Telling kevin that {fact}")
 
   kevin = "123-456-7890"
   cls.send_message(kevin, fact)
