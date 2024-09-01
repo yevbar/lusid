@@ -17,6 +17,8 @@ $ pip install lusid
 
 You'll need to allow your Terminal application (or whichever terminal emulator you're running) to have full disk access in order to view the `chat.db` file containing your iMessages
 
+Additionally, you'll need to disable certain permissions
+
 ```bash
 $ csrutil disable
 ```
