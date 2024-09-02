@@ -15,6 +15,8 @@ Use pip or whichever python package manager you're working with
 $ pip install lusid
 ```
 
+**Author note:** The below will not just change behavior to unlock iMessage  but also affect [a system-level functionality](https://support.apple.com/en-us/102149). Do not set this up if you're working on a computer that tends to install sketchy software from safe-for-work websites
+
 You'll need to allow your Terminal application (or whichever terminal emulator you're running) to have full disk access in order to view the `chat.db` file containing your iMessages as well as "Accessibility" permissions via the Security & Privacy settings on your Mac
 
 Additionally, you'll need to disable certain permissions

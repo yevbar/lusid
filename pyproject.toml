@@ -1,8 +1,8 @@
 [project]
 name = "lusid"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
-  { name="Yev Barkalov", email="yev@lsd.so" },
+  { name = "Yev Barkalov", email = "yev@lsd.so" },
 ]
 description = "Automate iMessage with Python"
 readme = "README.md"
