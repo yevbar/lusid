@@ -7,6 +7,8 @@ Self-hosted iMessage Python client (Twilio with blue bubbles) that also works wi
 
 You can programatically control iMessage, here's how:
 
+(Think this is cool? Check out what we're actually building @ [https://lsd.so](https://lsd.so))
+
 ## Installing
 
 Use pip or whichever python package manager you're working with
