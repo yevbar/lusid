@@ -179,7 +179,7 @@ In short, like how React components have lifecycle methods, the message client f
 # app.py
 
 +import random
-from requests import get
++from requests import get
 from lusid import create_simple_message_client
 
 def handle_message(from_number, body):
