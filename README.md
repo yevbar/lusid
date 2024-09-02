@@ -5,7 +5,7 @@ Automate iMessage with Python. If you have the following:
 * Macbook
 * Python
 
-You can programatically control iMessage, here's how:
+You can programatically control iMessage with a self-hosted solution, here's how:
 
 ## Installing
 
