@@ -1,6 +1,6 @@
 # Lusid
 
-Self-hosted iMessage Python client (Twilio with blue bubbles). If you have the following:
+Self-hosted iMessage Python client (Twilio with blue bubbles) that also works with SMS. If you have the following:
 
 * Macbook
 * Python

@@ -1,10 +1,10 @@
 [project]
 name = "lusid"
-version = "1.0.2"
+version = "1.0.3"
 authors = [
   { name = "Yev Barkalov", email = "yev@lsd.so" },
 ]
-description = "Self-hosted iMessage client"
+description = "Self-hosted iMessage client (Twilio with blue bubbles)"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
