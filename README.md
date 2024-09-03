@@ -1,13 +1,16 @@
 # Lusid
 
-Self-hosted iMessage Python client (Twilio with blue bubbles) that also works with SMS. If you have the following:
+Self-hosted Python interface for iMessage (similar to Twilio) that supports both green and blue bubbles. 
 
-* Macbook
+Think this is cool? Check out what we're building at [lsd.so](https://lsd.so)
+
+**Important:** Before use, please ensure you are compliant with telecommunications laws in your area and in some cases your recipient's area, including quiet hours, express consent, and other spam prevention laws. Lusid includes support, by default, for users to opt out by texting 'STOP', which is required in many countries including the US.
+
+## Requirements
+
+* Mac running macOS 10.11 or later
 * Python
-
-You can programatically control iMessage, here's how:
-
-(Think this is cool? Check out what we're actually building @ [https://lsd.so](https://lsd.so))
+* iPhone with SIM (optional, adds SMS/green bubble support)
 
 ## Installing
 
@@ -17,19 +20,21 @@ Use pip or whichever python package manager you're working with
 $ pip install lusid
 ```
 
-**Author note:** The below will not just change behavior to unlock iMessage  but also affect [a system-level functionality](https://support.apple.com/en-us/102149). Do not set this up if you're working on a computer that tends to install sketchy software from safe-for-work websites
+You'll need to allow your Terminal application (or whichever terminal emulator you're running) to have full disk access in order to view the `chat.db` file containing your iMessages as well as "Accessibility" permissions via the Security & Privacy settings on your Mac.
 
-You'll need to allow your Terminal application (or whichever terminal emulator you're running) to have full disk access in order to view the `chat.db` file containing your iMessages as well as "Accessibility" permissions via the Security & Privacy settings on your Mac
-
-Additionally, you'll need to disable certain permissions
+Additionally, you'll need to disable System Integrity Protection on your Mac by running this terminal command in recovery mode:
 
 ```bash
 $ csrutil disable
 ```
 
-If running `csrutil disable` doesn't work, try this [stackoverflow post](https://apple.stackexchange.com/questions/208478/how-do-i-disable-system-integrity-protection-sip-aka-rootless-on-macos-os-x)
+**Please note:** System Integrity Protection prevents malware from accessing and altering system-level files, and disabling leaves your computer vulnerable to malicious code. We reccomend going through the below article and ensuring you understand the risks before disabling.
 
-## Quickstart (sending messages)
+For additional information on how to disable System Integrity Protection, the risks associated, and how to re-enable it, refer to this [Apple Developer Article](https://developer.apple.com/documentation/security/disabling-and-enabling-system-integrity-protection).
+
+## Quickstart
+
+### Sending Messages
 
 If you're just interested in sending a message, import the `send_message` function and voila
 
@@ -42,7 +47,7 @@ body = "Yeehaw"
 send_message(to, body)
 ```
 
-## Quickstart (reading messages)
+### Reading Messages
 
 If you're just interested in getting iMessage data
 
@@ -65,7 +70,19 @@ print(read_messages(
 ))
 ```
 
-## Basic example
+### SMS Support
+
+If you're interested in supporting SMS (green bubbles), follow these steps:
+
+* Ensure your iPhone has an active SIM card and is updated to the latest iOS software.
+* In Settings > Apple ID, sign into the same Apple ID used on your Mac running Lusid.
+* In Settings > Apps > Messages > Text Message Forwarding, enable the Mac running Lusid.
+
+SMS/MMS messages can now be sent by running Lusid normally, provided both your Mac and iPhone are powered on and connected to the internet. To ensure best performance, keep both devices connected to the same network.
+
+## Example Usage
+
+### Basic
 
 If you're interested in something replying to received messages
 
@@ -163,7 +180,7 @@ $ python app.py
 Handling the message [Hello word!] from [+11234567890]
 ```
 
-## Complex example
+### Complex
 
 Suppose you wanted to be able to share cat facts with a specific friend while also having message interaction, here's how you can accomplish that. We'll be adding to the **Basic example** above
 
@@ -245,7 +262,3 @@ Telling kevin that Cats are the most popular pet in the United States: There are
 Telling kevin that Most cats are lactose intolerant, and milk can cause painful stomach cramps and diarrhea. It's best to forego the milk and just give your cat the standard: clean, cool drinking water.
 Telling kevin that Owning a cat can reduce the risk of stroke and heart attack by a third.
 ```
-
-## Shameless plug
-
-Think this is cool? Check out what we're actually building @ [https://lsd.so](https://lsd.so)
