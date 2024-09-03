@@ -52,7 +52,7 @@ class MessageClient:
 
     def send_message(self, to, content, ignore_stop=False):
         if not ignore_stop and self._number_requested_stop(to):
-            # If you want to ship this to the iOS app store then you'll need to stop when the user requests so
+            # To comply with US law, you'll need to stop when the user requests. 
             return
 
         imessage.send(to, content)
