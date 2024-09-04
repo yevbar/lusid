@@ -22,28 +22,22 @@ function sendNewMessage(number, message) {
     messagesApp.activate()
     //EDIT THIS TOO WORK ON SONOMA( tested ) , Current bug: puts number and message into number input
     // Adjust delay as necessary
-    delay(0.2)
+    delay(0.5)
     
     seApp.keystroke('n', {using: 'command down'})
     seApp.keystroke(number)
-    delay(0.2);
+    delay(0.25);
     seApp.keyCode(48)
-    delay(0.2);
+    delay(0.25);
     seApp.keyCode(48)
     //USE TAB TWICE TOO GO DOWN TOO MESSAGE INPUT
-    delay(1);
+    delay(0.75);
     seApp.keystroke(message)
-    delay(0.2);
+    delay(0.5);
     seApp.keyCode(36)
 
-    return getHandleForNumber(number)
+    return "Done!"
 }
-
-function getHandleForNumber(number) {
-    // Return handle id associated with number
-    return messagesApp.buddies.whose({handle:{_contains: number}})[0].id()
-}
-
 
 // Should prevent app from quitting
 function quit() {
