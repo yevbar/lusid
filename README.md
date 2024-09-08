@@ -28,7 +28,7 @@ Additionally, you'll need to disable System Integrity Protection on your Mac by 
 $ csrutil disable
 ```
 
-**Please note:** System Integrity Protection prevents malware from accessing and altering system-level files, and disabling leaves your computer vulnerable to malicious code. We reccomend going through the below article and ensuring you understand the risks before disabling.
+**Please note:** System Integrity Protection prevents malware from accessing and altering system-level files, and disabling leaves your computer vulnerable to malicious code. We recommend going through the below article and ensuring you understand the risks before disabling.
 
 For additional information on how to disable System Integrity Protection, the risks associated, and how to re-enable it, refer to this [Apple Developer Article](https://developer.apple.com/documentation/security/disabling-and-enabling-system-integrity-protection).
 
